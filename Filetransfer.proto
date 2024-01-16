@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package filetransfer;
+
+message DataRequest {
+    bytes data = 1;
+}
+
+message DataResponse {
+    string message = 1;
+}
+
+service FileTransfer {
+    rpc ProcessData(stream DataRequest) returns (DataResponse);
+}
